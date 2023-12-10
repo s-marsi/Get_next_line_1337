@@ -1,0 +1,4 @@
+By: smarsi <smarsi
+@student.42.fr
+int a = open("ft_strlcat.c",  O_RDWR);
+printf("%s\n", get_next_line(a));
