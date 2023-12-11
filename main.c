@@ -6,28 +6,35 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:44:04 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/10 09:41:06 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:13:03 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <string.h>
 
 int main()
 {
-    int a = open("a.txt",  O_RDWR);
-    char *c = get_next_line(a);
-    char *d = get_next_line(a);
-    char *e = get_next_line(a);
-    printf("%s\n%s\n%s", c, d, e);
-
-    // printf("%s\n", get_next_line(a));
-    free (c);
-    free (d);
-    free (e);
+    int a = open("a.txt", O_RDWR);
+    char *c;
+    // while ((c = get_next_line(a)) != NULL)
+    // {
+    //     printf("%s", c);
+    // }
+	// printf("%s", c);
+    c = get_next_line(a);
+	printf("%s", c);
+    c = get_next_line(a);
+	printf("%s", c);
+    // c = get_next_line(a);
+    // c = get_next_line(a);
+	// printf("%s\n", c);
+    // c = get_next_line(a);
+	// printf("%s\n", c);
     // system("leaks a.out");
-    return (0);
+    close(a);
+    return(0);
 }
-
 
 
 // static int	count_char(char *src)
