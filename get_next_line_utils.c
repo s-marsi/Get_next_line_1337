@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:19:10 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/10 09:23:21 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:01:26 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,33 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strdup(const char *s1)
+{
+	char	*s1_dup;
+	int		len;
+
+	len = ft_strlen(s1);
+	s1_dup = malloc((len + 1) * 1);
+	if (!s1_dup)
+		return (NULL);
+	s1_dup[0] = '\0';
+	ft_strlcat(s1_dup, s1, len + 1);
+	return (s1_dup);
+}
+
+
+char	*ft_strchr(const char *s, int c)
+{
+	if (!s)
+		return (NULL);
+	while (*s && *s != (char) c)
+		s++;
+	if (*s == (char) c)
+		return ((char *) s);
+	return (NULL);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	int		len;
@@ -64,28 +90,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[0] = '\0';
 	ft_strlcat(str, s1, ft_strlen(s1) + 1);
 	ft_strlcat(str, s2, len);
+	// free(s1);
 	return (str);
 }
 
-char	*ft_strdup(const char *s1)
-{
-	char	*s1_dup;
-	int		len;
-
-	len = ft_strlen(s1);
-	s1_dup = malloc((len + 1) * 1);
-	if (!s1_dup)
-		return (NULL);
-	s1_dup[0] = '\0';
-	ft_strlcat(s1_dup, s1, len + 1);
-	return (s1_dup);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s && *s != (char) c)
-		s++;
-	if (*s == (char) c)
-		return ((char *) s);
-	return (NULL);
-}
