@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:22:13 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/11 14:53:39 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/12 12:10:14 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_LINE_LINE_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 400000
+# define BUFFER_SIZE 10000000
 # endif
 # include <stdio.h>
 #include <fcntl.h>

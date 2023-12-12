@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:44:04 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/11 15:13:03 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/12 12:24:59 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,13 @@ int main()
 {
     int a = open("a.txt", O_RDWR);
     char *c;
-    // while ((c = get_next_line(a)) != NULL)
-    // {
-    //     printf("%s", c);
-    // }
-	// printf("%s", c);
-    c = get_next_line(a);
-	printf("%s", c);
-    c = get_next_line(a);
-	printf("%s", c);
-    // c = get_next_line(a);
-    // c = get_next_line(a);
-	// printf("%s\n", c);
-    // c = get_next_line(a);
-	// printf("%s\n", c);
+    while ((c = get_next_line(a)) != NULL)
+    {
+        printf("%s", c);
+        free(c);
+    }
+	printf("\n%s", c);
+    free(c);
     // system("leaks a.out");
     close(a);
     return(0);

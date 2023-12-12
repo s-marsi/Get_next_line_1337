@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:19:10 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/11 15:01:26 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/12 12:25:17 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ char	*ft_strdup(const char *s1)
 	return (s1_dup);
 }
 
-
 char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
@@ -90,7 +89,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	str[0] = '\0';
 	ft_strlcat(str, s1, ft_strlen(s1) + 1);
 	ft_strlcat(str, s2, len);
-	// free(s1);
+	free(s1);
 	return (str);
 }
-

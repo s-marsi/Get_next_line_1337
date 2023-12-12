@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:22:01 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/11 15:12:13 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/12 12:17:10 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static char *read_all(int fd, char *last)
 
 	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	size = 1;
-
 	if (!buf)
 		return (NULL);
 	while (!ft_strchr(last, '\n') && size)
@@ -58,7 +57,6 @@ static char	*read_line(char *src)
 	int		i;
 
 	i = 0;
-	printf("read line %s\n\n\n\n\n", src);
 	if (src[i] == '\0' || !src)
 		return (NULL);
 	while (src[i] && src[i] != '\n')
@@ -72,17 +70,19 @@ static char	*read_line(char *src)
 
 static char	*move_last(char *src)
 {
-	char	*last;
+	char	*left;
 	int		i;
+	int		len;
 
 	i = 0;
 	if (!src || !src[i])
 		return (NULL);
 	while (src[i] && src[i] != '\n')
 		i++;
-	last = malloc((ft_strlen(src) - i + 1) * sizeof(char));
-	ft_strlcpy(last, src + i + 1, i + 1);
-	return (last);
+	len = (ft_strlen(src) - i + 1);
+	left = malloc(len * sizeof(char));
+	ft_strlcpy(left, src + i + 1, len);
+	return (left);
 }
 
 char	*get_next_line(int fd)
@@ -96,5 +96,6 @@ char	*get_next_line(int fd)
 	tmp_all = read_all(fd, last);
 	return_line = read_line(tmp_all);
 	last = move_last(tmp_all);
+	free(tmp_all);
 	return (return_line);
 }
