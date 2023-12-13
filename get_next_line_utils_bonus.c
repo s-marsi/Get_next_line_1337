@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 09:19:10 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/12 13:22:21 by smarsi           ###   ########.fr       */
+/*   Created: 2023/12/12 15:05:10 by smarsi            #+#    #+#             */
+/*   Updated: 2023/12/12 15:12:39 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
