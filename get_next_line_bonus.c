@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 21:22:01 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/12 15:57:19 by smarsi           ###   ########.fr       */
+/*   Created: 2023/12/12 15:05:16 by smarsi            #+#    #+#             */
+/*   Updated: 2023/12/12 15:57:54 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -40,8 +40,8 @@ static char	*read_all(int fd, char *last)
 		size = read(fd, buf, BUFFER_SIZE);
 		if (size < 0)
 		{
-			free(buf);
 			free(last);
+			free(buf);
 			return (NULL);
 		}
 		buf[size] = '\0';
@@ -94,15 +94,15 @@ static char	*move_last(char *src)
 
 char	*get_next_line(int fd)
 {
-	static char	*last;
+	static char	*last[OPEN_MAX];
 	char		*return_line;
 	char		*tmp_all;
 
 	if (BUFFER_SIZE <= 0 || fd < 0 || BUFFER_SIZE >= 2147483647)
 		return (NULL);
-	tmp_all = read_all(fd, last);
+	tmp_all = read_all(fd, last[fd]);
 	return_line = read_line(tmp_all);
-	last = move_last(tmp_all);
+	last[fd] = move_last(tmp_all);
 	free(tmp_all);
 	return (return_line);
 }
