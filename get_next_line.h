@@ -6,15 +6,15 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:22:13 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/12 16:00:20 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:26:49 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
+#include <limits.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE INT_MAX
 # endif
 
 # include <stdio.h>

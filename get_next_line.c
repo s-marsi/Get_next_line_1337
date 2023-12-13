@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:22:01 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/12 15:57:19 by smarsi           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:26:59 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static char	*read_all(int fd, char *last)
 	char	*buf;
 	int		size;
 
-	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buf = malloc(( BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
 		return (NULL);
 	size = 1;
@@ -98,7 +98,7 @@ char	*get_next_line(int fd)
 	char		*return_line;
 	char		*tmp_all;
 
-	if (BUFFER_SIZE <= 0 || fd < 0 || BUFFER_SIZE >= 2147483647)
+	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
 	tmp_all = read_all(fd, last);
 	return_line = read_line(tmp_all);
