@@ -13,12 +13,14 @@ The get_next_line() function reads one line at a time from a given file descript
 ### Installation
 1. Clone the repository:
     ```bash
-    https://github.com/s-marsi/ft_printf.git  get_next_line
+    https://github.com/s-marsi/Get_next_line_1337.git get_next_line
     cd get_next_line
     ```
 2. Compile the library:
     ```bash
-    make all        # This will generate the libftprintf.a library file.
+    make all        # This will generate the getnext.a library file (MONDATORY PART AND BONUS PART).
+    # OR
+    make        # This will generate the getnext.a library file (ONLY MONDATORY PART).
     make clean      # This will remove object files.
     ```
 ## Usage :
@@ -33,5 +35,5 @@ The get_next_line() function reads one line at a time from a given file descript
 ## Testing
 
   ```bash
-   gcc -Wall -Werror -Wextra -D BUFFER_SIZE=1337 get_next_line.c get_next_line_utils.c && ./a.out
+   cc -Wall -Werror -Wextra -D BUFFER_SIZE=1337 main.c getnext.a && ./a.out
   ```
