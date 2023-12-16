@@ -4,21 +4,24 @@ AR = ar -r
 
 NAME = getnext.a
 
-FILES = get_next_line.c  get_next_line_utils.c get_next_line_bonus.c  get_next_line_utils_bonus.c
+MOONDATORY_FILES = get_next_line.c  get_next_line_utils.c 
 
-FILES_O = $(FILES:.c=.o)
+BONUS_FILES = get_next_line_bonus.c  get_next_line_utils_bonus.c
 
+MONDATORY_O = $(MOONDATORY_FILES:.c=.o)
 
-$(NAME) : $(FILES_O)
+BONUS_O = $(BONUS_FILES:.c=.o)
+
+$(NAME) : $(MONDATORY_O)
 	$(AR) $(NAME) $?
 
-bonus : $(FILES_O)
+bonus : $(BONUS_O)
 	$(AR) $(NAME) $?
 
-all : $(NAME)
+all : $(NAME) bonus
 
 clean :
-	rm -f $(FILES_O)
+	rm -f $(MONDATORY_O) $(BONUS_O)
 
 fclean : clean
 	rm -f $(NAME)
