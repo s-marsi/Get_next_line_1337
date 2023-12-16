@@ -32,6 +32,6 @@ The get_next_line() function reads one line at a time from a given file descript
    ```
 ## Testing
 
- ```bash
- gcc -Wall -Werror -Wextra -D BUFFER_SIZE=1337 get_next_line.c get_next_line_utils.c && ./a.out
- ```
+  ```bash
+   gcc -Wall -Werror -Wextra -D BUFFER_SIZE=1337 get_next_line.c get_next_line_utils.c && ./a.out
+  ```
