@@ -6,7 +6,7 @@
 /*   By: smarsi <smarsi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:19:10 by smarsi            #+#    #+#             */
-/*   Updated: 2023/12/12 13:22:21 by smarsi           ###   ########.fr       */
+/*   Updated: 2024/12/13 11:01:34 by smarsi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[len_dst + i] = '\0';
-	return (len_dst + len_src);
+	return (lenght_return);
 }
 
 size_t	ft_strlen(const char *s)
